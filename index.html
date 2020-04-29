@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Mail</title>
+    <style>
+        body {
+            /* margin-left: 50px; */
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 120px;
+            width: 30%;
+        }
+
+        h1 {
+            color: black;
+            font-family: 'Raleway', sans-serif;
+            font-size: 50px;
+            font-weight: 800;
+            line-height: 72px;
+            margin: 0 0 24px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 22px;
+        }
+
+        .list {
+            list-style: none;
+            margin-left: 1em;
+            counter-reset: line;
+        }
+
+        .list>li {
+            position: relative;
+            margin-bottom: 1.5em;
+        }
+
+        .list>li:before {
+            position: absolute;
+            left: -2.25em;
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            margin-right: 0.5em;
+            background-color: #B53C2C;
+            border-radius: 50%;
+            color: #fff;
+            text-align: center;
+            line-height: 1.25em;
+            counter-increment: line;
+            content: counter(line);
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 18px;
+            color: rgb(150, 0, 0);
+            text-transform: uppercase;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Sending mail using Python</h1>
+    <p>Learn more about smtplib and email modules</p>
+    <ol class="list">
+        <li><a href="https://docs.python.org/3/library/smtplib.html">smtplib module</a></li>
+        <li> <a href="https://docs.python.org/3/library/email.html">email module</a></li>
+        <li><a href="https://docs.python.org/3/library/email.mime.html">email mime module</a></li>
+    </ol>
+</body>
+
+</html>
