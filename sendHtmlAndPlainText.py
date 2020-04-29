@@ -64,8 +64,8 @@ try:
 
 except SMTPAuthenticationError:
     print("Couldnot login!!")
+    print("Chech your mail id and password!!")
 except SMTPException:
-    print("SMTP connection error!!")
+    print("SMTP connection error!! Try again.")
 except:
-    print("An error occured!1")
-
+    print("An error occured!!")
