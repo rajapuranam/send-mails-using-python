@@ -6,6 +6,8 @@ from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
 import os
+import getpass
+
 
 # host and port for Gmail
 host = "smtp.gmail.com"
@@ -13,7 +15,7 @@ port = 587
 
 # your mail id and password
 fromEmail = input('Enter your mail id : ')
-password = input('Enter password for {} : '.format(fromEmail))
+password = getpass.getpass('Enter password for {} : '.format(fromEmail))
 
 toList = ["raja.puranam99@gmail.com"]
 # toList = ["recipient_1@gmail.com", "recipient_2@gmail.com"]
