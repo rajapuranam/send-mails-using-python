@@ -13,7 +13,7 @@ port = 587
 
 # your mail id and password
 fromEmail = input('Enter your mail id : ')
-password = input('Enter password for {} : '.format(username))
+password = input('Enter password for {} : '.format(fromEmail))
 
 toList = ["raja.puranam99@gmail.com"]
 # toList = ["recipient_1@gmail.com", "recipient_2@gmail.com"]
@@ -42,21 +42,25 @@ try:
     # adding attachments to mail
     filename = "sample.txt"
     filepath = os.path.join(os.getcwd(), filename)
-    attachment = open(filepath, "rb") 
-    attach = MIMEBase('application', 'octet-stream') 
-    attach.set_payload((attachment).read()) 
-    encoders.encode_base64(attach) 
-    attach.add_header('Content-Disposition', "attachment; filename= %s" % filename) 
-    
+    attachment = open(filepath, "rb")
+    attach = MIMEBase('application', 'octet-stream')
+    attach.set_payload((attachment).read())
+    encoders.encode_base64(attach)
+    attach.add_header('Content-Disposition',
+                      "attachment; filename= %s" % filename)
+
     # attaching various parts to mail
     theMessage.attach(part1)
     theMessage.attach(part2)
-    theMessage.attach(attach) 
+    theMessage.attach(attach)
 
     # sending mail
     conn.sendmail(fromEmail, toList, theMessage.as_string())
 
     print('Email sent successfully!!')
+
+    # closing connection
+    conn.quit()
 
 except SMTPAuthenticationError:
     print("Couldnot login!!")
@@ -64,7 +68,4 @@ except SMTPException:
     print("SMTP connection error!!")
 except:
     print("An error occured!1")
-
-# closing connection
-conn.quit()
 
