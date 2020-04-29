@@ -17,8 +17,7 @@ port = 587
 fromEmail = input('Enter your mail id : ')
 password = getpass.getpass('Enter password for {} : '.format(fromEmail))
 
-toList = ["raja.puranam99@gmail.com"]
-# toList = ["recipient_1@gmail.com", "recipient_2@gmail.com"]
+toList = ["recipient_1@gmail.com", "recipient_2@gmail.com"]
 
 try:
     # setting connection and logging to account
@@ -35,7 +34,7 @@ try:
     theMessage['To'] = toList[0]
 
     # plain text as well as html rendered text
-    plainText = "testing the message"
+    plainText = "Sending sample message using python"
     htmltext = open('index.html', 'r').read()
 
     part1 = MIMEText(plainText, 'plain')
